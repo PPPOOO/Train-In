@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -122,5 +123,11 @@ public class GameManager : MonoBehaviour
         train.DOLocalMoveX(-0.28f, 7).SetEase(Ease.OutExpo);
 
         TimerObj.SetActive(false);
+    }
+
+    public void SkipStage()
+    {
+        NextStageS.NextStageName = NextStageName;
+        SceneManager.LoadScene("03Animation");
     }
 }
